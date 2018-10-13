@@ -1,0 +1,4 @@
+Khabib Nurmagomedov threatens to quit UFC after brawl
+Russian fighter Khabib Nurmagomedov has threatened to quit UFC in the wake of his victory over Conor McGregor in Las Vegas at the weekend.
+Nurmagomedov's countryman Zubaira Tukhugov -- a rostered featherweight fighter -- has been pulled from a fight against Artem Lobov following the brawl that broke out after Saturday's fight. In the chaos that ensued Tukhugov exchanged blows with McGregor after climbing into the ring.
+"You canceled Zubaira's fight and you want to dismiss him just because he hit Conor," Nurmagomedov said in a lengthy Instagram post addressed to UFC.
