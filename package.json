@@ -10,7 +10,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.3.4",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-speech": "^0.1.0"
   },
   "engines": {
     "node": ">=6"
