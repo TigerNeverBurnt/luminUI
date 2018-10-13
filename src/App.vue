@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <div>
-      <el-button icon="el-icon-service" circle></el-button>
-    </div>
+    <el-container style="height:100%; border: 1px solid #eee">
+      <el-aside width="600px" style="background-color: rgb(238, 241, 246)">
+      </el-aside>
+      <el-main>
+          <InputField/>
 
+      </el-main>  
+    </el-container>
   </div>
 </template>
 
 <script>
+
+import InputField from './InputField.vue';
+
 export default {
-  methods: {
-    startHacking () {
-      this.$notify({
-        title: 'It works!',
-        type: 'success',
-        message: 'We\'ve laid the ground work for you. It\'s time for you to build something epic!',
-        duration: 5000
-      })
-    }
+  components:{
+    InputField 
   }
 }
 </script>
