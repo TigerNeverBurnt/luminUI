@@ -1,30 +1,26 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <el-button @click="startHacking">Start</el-button>
-    </div>
+    <!-- <sd>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Bright_red_tomato_and_cross_section02.jpg" class="image">
+      <span>Tasty sd</span>
+      <el-button type="text" class="button">Save image</el-button>
+    </sd> -->
+    <sd/>
   </div>
 </template>
 
+
+
 <script>
+import sd from './sd.vue'
 export default {
-  methods: {
-    startHacking () {
-      this.$notify({
-        title: 'It works!',
-        type: 'success',
-        message: 'We\'ve laid the ground work for you. It\'s time for you to build something epic!',
-        duration: 5000
-      })
-    }
-  }
+  components: {
+		sd
+	}
 }
+
 </script>
 
 <style>
-#app {
-  font-family: Helvetica, sans-serif;
-  text-align: center;
-}
+
 </style>
