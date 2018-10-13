@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <div>
-      <el-button @click="startHacking">Start</el-button>
+      <el-button icon="el-icon-service" circle></el-button>
     </div>
+
   </div>
 </template>
 
@@ -26,5 +26,13 @@ export default {
 #app {
   font-family: Helvetica, sans-serif;
   text-align: center;
+  
+}
+.type1 {
+    width: 2%;
+    height:2%;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid black;
 }
 </style>
