@@ -2,10 +2,13 @@
   <div id="app">
     <el-container style="height:100%; border: 1px solid #eee">
       <el-aside width="600px" style="background-color: rgb(238, 241, 246)">
+        <sd></sd>
       </el-aside>
       <el-main>
+          <div>
+              <Record ref="record"></Record>
+          </div>
           <InputField/>
-
       </el-main>  
     </el-container>
   </div>
@@ -14,10 +17,11 @@
 <script>
 
 import InputField from './InputField.vue';
-
+import Record from './Record.vue';
+import sd from './sd.vue';
 export default {
   components:{
-    InputField 
+    InputField,Record,sd
   }
 }
 </script>
@@ -36,3 +40,5 @@ export default {
     border: 2px solid black;
 }
 </style>
+    
+
