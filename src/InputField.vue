@@ -2,17 +2,20 @@
     <v-layout row wrap>
         <textArea></textArea>
         <textTitle></textTitle>
+        <text-highlight></text-highlight>
     </v-layout>
 </template>
 
 <script>
     import textTitle from "./textTitle.vue";
     import textArea from "./textArea.vue";
+    import textHighlight from "./textHighlight.vue"
 
     export default {
         components: {
             textTitle,
-            textArea
+            textArea,
+            textHighlight
         },
     };
 </script>
