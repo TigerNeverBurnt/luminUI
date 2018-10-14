@@ -1,10 +1,11 @@
 <template>
-    <div >
-        <button v-on:click="changeRecord">
-            {{st}}
-        </button>
-
-        <vue-speech  @onTranscriptionEnd="onEnd" />
+    <div>
+        <v-btn fab dark fixed
+               bottom
+               right :color="activeColor" v-on:click="changeRecord">
+            <v-icon dark>{{st}}</v-icon>
+        </v-btn>
+        <vue-speech @onTranscriptionEnd="onEnd"/>
 
     </div>
 
@@ -14,37 +15,42 @@
 
 
     export default {
-        name:"Record",
-        data(){
+        name: "Record",
+        data() {
             return {
                 record: false,
-                words:[],
+                words: [],
                 text: "",
-                st: "Start"
+                st: "radio_button_checked",
+                activeColor: "indigo"
             }
 
         },
-        created:{
-            func(){
+        created: {
+            func() {
                 this.text = Vue.VueLocalStorage.get('text');
             }
         }
         ,
-        methods:{
-            changeRecord(){
+        methods: {
+            changeRecord() {
                 this.record = !this.record;
-                if(this.record == true){
-                    this.st = "Stop";
+                if (this.record == true) {
+                    this.st = "stop";
+                    this.activeColor = "pink";
                 }
                 else {
-                    this.st = "Start";
-                    this.$nextTick(() => {this.record = true});
+                    this.st = "radio_button_checked";
+                    this.activeColor = "indigo"
+                    this.$nextTick(() => {
+                        this.record = true
+                    });
 
                 }
             },
-            onEnd ({ lastSentence, transcription }) {
+            onEnd({lastSentence, transcription}) {
                 this.words = transcription
-                this.text = this.text+lastSentence
+                this.text = this.text + lastSentence
 
             }
         }

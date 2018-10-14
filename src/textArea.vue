@@ -1,11 +1,31 @@
 <template>
-    <el-input
+    <v-flex xs12>
+        <v-toolbar color="indigo">
+            <v-toolbar-title>Editor</v-toolbar-title>
+            <v-spacer></v-spacer>
+        </v-toolbar>
+        <v-textarea
+                full-width=true
+                auto-grow
+                autofocus=true
+                solo
+                counter=1000
+                name="input"
+                clearable=true
+                value=""
+                :rows="10"
+                placeholder="Please input"
+                v-model="message"
+                class="tarea">
+        ></v-textarea>
+    </v-flex>
+    <!--<el-input
         type="textarea"
         :rows="20"
         placeholder="Please input"
         v-model="message"
         class="tarea">
-    </el-input>
+    </el-input>-->
 </template>
 
 <script>

@@ -11,8 +11,10 @@
     "axios": "^0.18.0",
     "dotenv": "^6.1.0",
     "element-ui": "^2.3.4",
+    "material-design-icons-iconfont": "^3.0.3",
     "vue": "^2.5.16",
     "vue-speech": "^0.1.0",
+    "vuetify": "^1.2.9",
     "vuex": "^3.0.1"
   },
   "engines": {

@@ -123,8 +123,8 @@
     display: block;
     padding: 1px;
     display: block;
-    max-width: 230px;
-    max-height: 230px;
+    max-width: 330px;
+    max-height: 330px;
     width: auto;
     height: auto;
   }
@@ -149,7 +149,7 @@
   }
 
   .elb {
-    padding: 20;
+    padding: 10px;
   }
 
   .row::after {

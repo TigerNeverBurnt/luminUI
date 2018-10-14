@@ -1,12 +1,28 @@
 <template>
-<div align="center">
-    <el-input 
+
+    <!--<el-input
           size="medium"
           suffix-icon=""
           placeholder="please input title" 
           v-model="itext" clearable>
-    </el-input>
-</div>
+    </el-input>-->
+    <v-flex xs12>
+        <v-toolbar color="indigo">
+            <v-toolbar-title>Search Reverse Filter Pool</v-toolbar-title>
+            <v-spacer></v-spacer>
+        </v-toolbar>
+        <v-textarea
+                full-width=true
+                auto-grow
+                autofocus=true
+                solo
+                counter=1000
+                name="input"
+                clearable=true
+                value=""
+                v-model="itext"
+        ></v-textarea>
+    </v-flex>
 </template>
 
 <script>
