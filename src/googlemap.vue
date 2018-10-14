@@ -4,13 +4,13 @@
 <script>
 export default {
   name: 'googlemap',
-  props: ['name'],
+  props: ['name','lon','lat'],
   data: function () {
     return {
       mapName: this.name + "-map",
       markerCoordinates: [{
-        latitude: 38.92,
-        longitude: -92.31
+        latitude: this.lat,
+        longitude: this.lon
       }],
       map: null,
       bounds: null,

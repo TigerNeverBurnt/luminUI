@@ -49,7 +49,12 @@ export default new Vuex.Store({
             axios.post(url, this.getters.getPlainState)
               .then(function (response) {
                 console.log(response.data);
-                context.commit('setImgData',response.data);
+                var ddata = response.data;
+                ddata.forEach(function(item, index){
+                    item.lat = null;
+                    item.lon = null;
+                });
+                context.commit('setImgData',ddata);
               })
               .catch(function (error) {
                 console.log(error);

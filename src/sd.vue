@@ -24,34 +24,20 @@
 
           <!-- </el-popover> -->
           <el-collapse v-model="activeNames" @change="handleChange">
-            <el-collapse-item title="Check the Location" name="1">
+            <el-collapse-item v-if="img.lon && img.lat" title="Check the Location" name="1">
 
-              <googlemap />
-
-            </el-collapse-item>
-            <el-collapse-item title="Check the people" name="2">
-
-              <!-- <div class="column"> -->
-
-              <people />
-              <!-- </div> -->
+              <googlemap v-bind:lon="img.lon" v-bind:lat="img.lat"/>
 
             </el-collapse-item>
           </el-collapse>
 
-
-
-
           <div slot="footer" class="dialog-footer">
             <el-button @click="dialogFormVisible = false">Cancel</el-button>
-            <el-button type="primary" @click="dialogFormVisible = false">Save</el-button>
+            <el-button type="primary" v-bind:href="img.content_url" v-bind:download="img.content_url" @click="dialogFormVisible=false">Save</el-button>
           </div>
 
 
         </el-dialog>
-
-
-
       </el-card>
     </el-col>
   </el-row>
@@ -61,7 +47,6 @@
 
 <script>
   import googlemap from './googlemap.vue'
-  import people from './people.vue'
 
   export default {
     props:{
@@ -69,7 +54,6 @@
     },
     components: {
       googlemap,
-      people
     },
     data: {
       labelPosition: "right",

@@ -1,7 +1,7 @@
 <template>
 <div>
     <div v-if="img_array">
-        <sd v-for="img in img_array" v-bind:img="img" ></sd>       
+        <sd v-for="img in img_array" v-bind:img="img"></sd>       
     </div>
 </div>
 </template>
