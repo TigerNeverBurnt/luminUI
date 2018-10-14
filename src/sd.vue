@@ -21,20 +21,27 @@
           </el-popover>
 
         <el-dialog title="Images" :visible.sync="dialogFormVisible">
-              <img  src="https://www.w3schools.com/css/img_5terre_wide.jpg"   class="imageInbox">
-
+              <img  src="https://www.w3schools.com/css/img_5terre_wide.jpg" class="imageInbox">
+              
+        
               <el-collapse v-model="activeNames" @change="handleChange" >
-                <el-collapse-item title="Check the Location" name="2">
-                  <!-- <div>
-                 <iframe   src="https://maps.google.com/maps?q='+YOUR_LAT+','+YOUR_LON+'&hl=es;z=14&amp;output=embed"  width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                  </div> -->
-                  <!-- <div id="googleMap"  style="width:100%;height:400px;"></div> -->
+                <el-collapse-item title="Check the Location" name="1">
+                  
                        <googlemap/>
+
+                </el-collapse-item>
+                 <el-collapse-item title="Check the people" name="2">
+                  
+                    <!-- <div class="column"> -->
+                  
+                       <people/>
+                    <!-- </div> -->
 
                 </el-collapse-item>
               </el-collapse>
 
+
+               
 
               <div slot="footer" class="dialog-footer">
                   <el-button @click="dialogFormVisible = false">Cancel</el-button>
@@ -55,11 +62,12 @@
 
 <script>
 import googlemap from './googlemap.vue'
+import people from './people.vue'
 
 export default {
   components:{
-   googlemap
-    
+   googlemap,
+    people
   },
   data: {
     labelPosition: "right",
@@ -67,6 +75,7 @@ export default {
       name: "",
       region: "",
       type: ""
+
     }
   },
   data() {
@@ -75,11 +84,13 @@ export default {
       dialogTableVisible: false,
       dialogFormVisible: false,
       form: {},
-      activeNames: ["1"],
-      formLabelWidth: "120px"
+      activeNames: ["0"],
+      formLabelWidth: "120px",
+
     };
   },
   mounted() {
+     
   },
   methods: {
     handleChange(val) {
@@ -178,5 +189,12 @@ export default {
 .elb {
   padding: 20;
 }
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
 </style>
 

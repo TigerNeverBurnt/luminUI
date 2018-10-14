@@ -18,5 +18,6 @@ new Vue({
     store,
     render: h => h(App),
     Record: h =>h(Record),
+   
     
 })
