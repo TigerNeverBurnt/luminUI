@@ -10,10 +10,19 @@
 
         </el-popover>
 
-        <el-dialog title="Images" :visible.sync="dialogFormVisible">
-          <img v-bind:src="img.content_url" class="imageInbox">
+        <el-dialog :visible.sync="dialogFormVisible">
+          <!-- <el-popover
+            placement="bottom-start"
+            width="200"
+            trigger="hover"
+            v-bind:content="img.">
+            <el-button slot="reference">hover 激活</el-button>
+           -->
+ 
 
+          <img  v-bind:src="img.content_url" class="imageInbox">
 
+          <!-- </el-popover> -->
           <el-collapse v-model="activeNames" @change="handleChange">
             <el-collapse-item title="Check the Location" name="1">
 

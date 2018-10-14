@@ -3,7 +3,7 @@
     <div id="app">
         <el-header class=level2 id=example3 style="background-color: #18b3ce">Lumin</el-header>
 
-        <el-container style="height:700px; border: 1px solid #eee">
+        <el-container style="height:1000px; border: 1px solid #eee">
 
             <el-aside width="400px" style="background-color: rgb(238, 241, 246)">
                 <Pictures v-bind:img_array="this.$store.getters.getImgArray"></Pictures>

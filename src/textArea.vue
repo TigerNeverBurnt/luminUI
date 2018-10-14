@@ -5,13 +5,13 @@
             <v-spacer></v-spacer>
         </v-toolbar>
         <v-textarea
-                full-width=true
+                full-width
                 auto-grow
-                autofocus=true
                 solo
                 counter=1000
                 name="input"
-                clearable=true
+                autofocus
+                clearable
                 value=""
                 :rows="10"
                 placeholder="Please input"
