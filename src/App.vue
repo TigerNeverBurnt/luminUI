@@ -1,11 +1,13 @@
 <template>
 
-    <div id="app">
-        <el-header class=level2 id=example3 style="background-color: #18b3ce">Lumin</el-header>
+    <div id="app" class="welcome">
+        <v-btn fab dark small top fixed left style="top: 10px;" v-on:click="changeView">
+            <v-icon dark>list</v-icon>
+        </v-btn>
+        <el-header class="welcome" style="background-color: #343233;color: #efdab9;">Lumin</el-header>
 
         <el-container style="height:700px; border: 1px solid #eee">
-
-            <el-aside width="400px" style="background-color: rgb(238, 241, 246)">
+            <el-aside :width="w" style="background-color: rgb(238, 241, 246)">
                 <Pictures v-bind:img_array="this.$store.getters.getImgArray"></Pictures>
             </el-aside>
             <v-divider
@@ -37,32 +39,44 @@
             Record,
             Pictures
         },
+        methods: {
+            changeView() {
+                if (this.show == false) {
+                    this.w = "500px"
+                }
+                else {
+                    this.w = "0px"
+                }
+                this.show = !this.show;
+            }
+        },
         data() {
-            return {}
-//       [
-//       {
-//           "content_url": "https://www.slrlounge.com/wp-content/uploads/2016/01/natural-light-couples-photography-whimsical-walk-1600x1066.jpg",
-//           "date_published": "2018-08-29T22:09:00.0000000Z",
-//           "description": null,
-//           "detail": "Natural Light Couples Photography Workshop - SLR Lounge",
-//           "host_page_url": "https://www.slrlounge.com/store-product/natural-light-couples-photography-workshop-dvd/#comments",
-//           "thumbnail_url": "https://tse3.mm.bing.net/th?id=OIP.6MLBqvnE9K5KZ8ahCXcd8QHaE7&pid=Api"
-//       },
-//       {
-//           "content_url": "https://www.slrlounge.com/wp-content/uploads/2016/01/natural-light-couples-photography-whimsical-walk-1600x1066.jpg",
-//           "date_published": "2018-08-29T22:09:00.0000000Z",
-//           "description": null,
-//           "detail": "Natural Light Couples Photography Workshop - SLR Lounge",
-//           "host_page_url": "https://www.slrlounge.com/store-product/natural-light-couples-photography-workshop-dvd/#comments",
-//           "thumbnail_url": "https://tse3.mm.bing.net/th?id=OIP.6MLBqvnE9K5KZ8ahCXcd8QHaE7&pid=Api"
-//       }
-// ]
+            return {
+                show: false,
+                w: "0px"
+            }
         }
     };
 
 </script>
 
 <style>
+
+    .hero-tagline-highlight {
+        font-weight: inherit;
+        color: #78b0a0;
+    }
+
+    .welcome {
+        font: 16px/1.5 normal normal;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-weight: 300;
+        font-size: 1.5em;
+        letter-spacing: 0.07em;
+        color: #efdab9;
+        background-color: #eef1f6;
+    }
+
     #app {
         font-family: Helvetica, sans-serif;
         text-align: center;

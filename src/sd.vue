@@ -123,8 +123,8 @@
     display: block;
     padding: 1px;
     display: block;
-    max-width: 330px;
-    max-height: 330px;
+    max-width: 470px;
+    max-height: 470px;
     width: auto;
     height: auto;
   }
