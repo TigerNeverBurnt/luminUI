@@ -13,7 +13,11 @@
     "element-ui": "^2.3.4",
     "vue": "^2.5.16",
     "vue-speech": "^0.1.0",
+<<<<<<< HEAD
     "vue2-google-maps": "^0.10.2"
+=======
+    "vuex": "^3.0.1"
+>>>>>>> 551a8ba69bdf20064f549cbf85f15132b0ffa718
   },
   "engines": {
     "node": ">=6"

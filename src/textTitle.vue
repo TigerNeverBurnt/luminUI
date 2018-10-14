@@ -4,7 +4,6 @@
           size="medium"
           suffix-icon=""
           placeholder="please input title" 
-          @keydown.enter = "$emit('returnSearchText','itext')"
           v-model="itext" clearable>
     </el-input>
     </div>
@@ -13,9 +12,14 @@
 
 <script>
 export default {
-    data () {
-        return{
-            itext : ''
+    computed:{
+        itext: {
+            get () {
+                return this.$store.state.search_text
+            },
+            set (value) {
+                this.$store.commit('setSearchText', value)
+            }
         }
     }
 }
