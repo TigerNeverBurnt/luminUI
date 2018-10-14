@@ -38,6 +38,10 @@ export default new Vuex.Store({
         }
     },
     actions: {
+        AddMainText(context,text){
+          text = this.getters.getMainText + text;
+          context.dispatch('SetMainText',text);  
+        },
 
         SetMainText(context,text){
             context.commit('setMainText',text);

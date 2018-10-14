@@ -12,13 +12,13 @@
             <v-spacer></v-spacer>
         </v-toolbar>
         <v-textarea
-                full-width=true
+                full-width
                 auto-grow
-                autofocus=true
+                autofocus
                 solo
                 counter=1000
                 name="input"
-                clearable=true
+                clearable
                 value=""
                 v-model="itext"
         ></v-textarea>
