@@ -6,8 +6,8 @@
     <el-container style="height:700px; border: 1px solid #eee">
       
       <el-aside width="300px" style="background-color: rgb(238, 241, 246)">
-        <sd/>  <sd/><sd/><sd/><sd/>  <sd/>
-        </el-aside>
+      <sd/>  <sd/><sd/><sd/><sd/>  <sd/>
+      </el-aside>
           
       <el-container>
 
@@ -20,33 +20,13 @@
           <InputField/>
       </el-main> 
     </el-container>
-<<<<<<< HEAD
-   
-=======
             
               
     </el-container>  
->>>>>>> 551a8ba69bdf20064f549cbf85f15132b0ffa718
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-
-import InputField from './InputField.vue';
-import Record from './Record.vue';
-import sd from './sd.vue';
-import googlemap from './googlemap.vue'
-export default {
-  components:{
-    InputField,Record,sd,googlemap
-    
-  }
-}
-
-
-
-=======
 import InputField from "./InputField.vue";
 import Record from "./Record.vue";
 import sd from "./sd.vue";
@@ -57,7 +37,6 @@ export default {
     sd
   }
 };
->>>>>>> 551a8ba69bdf20064f549cbf85f15132b0ffa718
 </script>
 
 <style>

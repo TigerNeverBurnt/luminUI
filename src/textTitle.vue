@@ -6,11 +6,11 @@
           placeholder="please input title" 
           v-model="itext" clearable>
     </el-input>
-    </div>
-    
+</div>
 </template>
 
 <script>
+var timeout = null;
 export default {
     computed:{
         itext: {
@@ -18,7 +18,10 @@ export default {
                 return this.$store.state.search_text
             },
             set (value) {
-                this.$store.commit('setSearchText', value)
+                clearTimeout(timeout);
+                timeout = setTimeout(()=>{
+                    this.$store.dispatch('SetSearchText', value);
+                },2000);
             }
         }
     }
