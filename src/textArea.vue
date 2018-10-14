@@ -1,18 +1,29 @@
 <template>
     <el-input
-            type="textarea"
-            :rows="50"
-            placeholder="Please input"
-            v-model="textarea"
-            class="tarea">
-          </el-input>
+        type="textarea"
+        :rows="20"
+        placeholder="Please input"
+        v-model="message"
+        class="tarea">
+    </el-input>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-    data(){
-        return {
-            textarea : ""
+    computed:{
+        message: {
+            get () {
+                return this.$store.state.main_text
+            },
+            set (value) {
+                this.$store.commit('setMainText', value)
+            }
+        }
+    },
+    methods:{
+        setMainText(e){
+            this.$store.commit('setMainText',e.target.value);
         }
     }
 }
@@ -20,6 +31,6 @@ export default {
 
 <style>
 .tarea {
-    margin-top : 2em;
+    margin-bottom : 2em;
 }
 </style>
