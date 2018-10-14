@@ -9,47 +9,52 @@ var url = "http://10.7.61.9:5000/";
 // const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
-    state: {
-        main_text: "",
-        search_text: "",
-        img_data: [],
-        location_data: {},
-        entity_data: {}
+    state:{
+        main_text : "",
+        search_text : "",
+        img_data : [],
+        location_data :{},
+        entity_data :{}
     },
     mutations: {
 
-        setImgData(state, img_array) {
+        setImgData(state,img_array){
             state.img_data = img_array;
         },
-        setMainText(state, text) {
+        setMainText(state, text){
             state.main_text = text;
         },
 
-        addMainText(state, text) {
+        addMainText(state, text){
             state.main_text += text;
         },
 
-        setSearchText(state, text) {
+        setSearchText(state, text){
             state.search_text = text;
         },
 
-        addSearchText(state, text) {
+        addSearchText(state, text){
             state.search_text += text;
         }
     },
     actions: {
-        AddMainText(context, text) {
-            text = this.getters.getMainText + text;
-            context.dispatch('SetMainText', text);
+        AddMainText(context,text){
+          text = this.getters.getMainText + text;
+          context.dispatch('SetMainText',text);  
         },
 
-        SetMainText(context, text) {
-            context.commit('setMainText', text);
+        SetMainText(context,text){
+            context.commit('setMainText',text);
             console.log(this.getters.getPlainState);
             axios.post(url, this.getters.getPlainState)
                 .then(function (response) {
                     console.log(response.data);
-                    context.commit('setImgData', response.data);
+                    var ddata = response.data;
+                    ddata.forEach(function(item, index){
+                        item.lat = null;
+                        item.lon = null;
+                    });
+                    context.commit('setImgData',ddata);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -87,35 +92,35 @@ export default new Vuex.Store({
             });
         },
 
-        SetSearchText(context, text) {
-            context.commit('setSearchText', text);
+        SetSearchText(context, text){
+            context.commit('setSearchText',text);
             axios.post(url, this.getters.getPlainState)
-                .then(function (response) {
-                    console.log(response.data);
-                    context.commit('setImgData', response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+              .then(function (response) {
+                console.log(response.data);
+                context.commit('setImgData',response.data);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
         }
     },
-    getters: {
-        getMainText: state => {
+    getters:{
+        getMainText : state => {
             return state.main_text;
         },
 
-        getImgArray: state => {
+        getImgArray : state=>{
             return state.img_data;
         },
 
-        getSearchText: state => {
+        getSearchText : state =>{
             return state.search_text;
         },
 
-        getPlainState: state => {
+        getPlainState: state =>{
             return {
-                main_text: state.main_text.replace(/[^a-zA-Z0-9\s]/g, ''),
-                search_text: state.search_text.replace(/[^a-zA-Z0-9\s]/g, '')
+                main_text : state.main_text.replace(/[^a-zA-Z0-9\s]/g, ''),
+                search_text : state.search_text.replace(/[^a-zA-Z0-9\s]/g, '')
             }
         }
     }

@@ -13,7 +13,7 @@
                 autofocus
                 clearable
                 value=""
-                :rows="10"
+                :rows="20"
                 placeholder="Please input"
                 v-model="message"
                 class="tarea">

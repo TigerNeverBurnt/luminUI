@@ -4,11 +4,14 @@
         <v-btn fab dark small top fixed left style="top: 10px;" v-on:click="changeView">
             <v-icon dark>list</v-icon>
         </v-btn>
+        
         <el-header class="welcome" style="background-color: #343233;color: #efdab9;">
             Lumin -> A searchable <span class="hero-tagline-highlight"> resource editor </span>for Media Worker
         </el-header>
-
-        <el-container style="height:700px; border: 1px solid #eee">
+        <v-btn fab dark small top fixed right style="top: 10px;" v-on:click="getLoc">
+            <v-icon dark></v-icon>
+        </v-btn>
+        <el-container style="height:50em; border: 1px solid #eee">
             <el-aside :width="w" style="background-color: rgb(238, 241, 246)">
                 <Pictures v-bind:img_array="this.$store.getters.getImgArray"></Pictures>
             </el-aside>
@@ -34,6 +37,7 @@
     import InputField from "./InputField.vue";
     import Record from "./Record.vue";
     import Pictures from "./Pictures.vue";
+    import axios from 'axios';
 
     export default {
         components: {
@@ -50,6 +54,23 @@
                     this.w = "0px"
                 }
                 this.show = !this.show;
+            },
+            getLoc(){
+                axios.get("http://10.7.61.9:5000/exif").then(response=>{
+                var ddata = response.data;
+                console.log(ddata);
+                ddata.forEach(function(item, index){
+                    item.content_url = item.url;
+                    item.description = "";
+                    item.detail = "";
+                    delete item.url;
+                });
+                console.log(ddata);
+                this.$store.commit('setImgData',ddata);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
             }
         },
         data() {
