@@ -6,8 +6,8 @@
     <el-container style="height:700px; border: 1px solid #eee">
       
       <el-aside width="300px" style="background-color: rgb(238, 241, 246)">
-        <sd/>  <sd/><sd/><sd/><sd/>  <sd/>
-        </el-aside>
+      <sd/>  <sd/><sd/><sd/><sd/>  <sd/>
+      </el-aside>
           
       <el-container>
 
@@ -19,8 +19,8 @@
 
           <InputField/>
       </el-main> 
-    </el-container>
-   </el-container>
+    </el-container>  
+    </el-container>  
   </div>
 </template>
 

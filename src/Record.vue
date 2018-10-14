@@ -4,10 +4,8 @@
             {{st}}
         </button>
 
-        <vue-speech v-if="record" @onTranscriptionEnd="onEnd" />
+        <vue-speech  @onTranscriptionEnd="onEnd" />
 
-        <br>
-        <textarea >{{text}}</textarea>
     </div>
 
 </template>
@@ -41,14 +39,12 @@
                 else {
                     this.st = "Start";
                     this.$nextTick(() => {this.record = true});
-                    window.location.reload();
 
                 }
             },
             onEnd ({ lastSentence, transcription }) {
                 this.words = transcription
                 this.text = this.text+lastSentence
-                Vue.VueLocalStorage.set('text', this.text);
 
             }
         }

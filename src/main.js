@@ -9,7 +9,6 @@ import store from './store'
 
 
 Vue.use(VueSpeech)
-
 Vue.use(ElementUI)
 Vue.use(Vuex)
 

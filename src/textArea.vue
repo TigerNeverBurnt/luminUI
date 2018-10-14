@@ -10,6 +10,7 @@
 
 <script>
 import { mapState } from 'vuex'
+var timeout = null;
 export default {
     computed:{
         message: {
@@ -17,13 +18,12 @@ export default {
                 return this.$store.state.main_text
             },
             set (value) {
-                this.$store.commit('setMainText', value)
+                clearTimeout(timeout);
+                timeout = setTimeout(()=>{
+                    this.$store.dispatch('SetMainText', value);
+                },2000);
+                
             }
-        }
-    },
-    methods:{
-        setMainText(e){
-            this.$store.commit('setMainText',e.target.value);
         }
     }
 }
