@@ -11,13 +11,8 @@ import store from './store'
 Vue.use(VueSpeech)
 
 Vue.use(ElementUI)
-<<<<<<< HEAD
-
-  
-=======
 Vue.use(Vuex)
 
->>>>>>> 551a8ba69bdf20064f549cbf85f15132b0ffa718
 new Vue({
     el: '#app',
     store,
