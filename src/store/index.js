@@ -12,12 +12,15 @@ export default new Vuex.Store({
     state:{
         main_text : "",
         search_text : "",
-        img_data : {},
+        img_data : [],
         location_data :{},
         entity_data :{}
     },
     mutations: {
 
+        setImgData(state,img_array){
+            state.img_data = img_array;
+        },
         setMainText(state, text){
             state.main_text = text;
         },
@@ -42,7 +45,7 @@ export default new Vuex.Store({
             axios.post(url, this.getters.getPlainState)
               .then(function (response) {
                 console.log(response.data);
-                state.img_data = response.data;
+                context.commit('setImgData',response.data);
               })
               .catch(function (error) {
                 console.log(error);
@@ -51,10 +54,10 @@ export default new Vuex.Store({
 
         SetSearchText(context, text){
             context.commit('setSearchText',text);
-            axios.post(url, getters.getPlainState)
+            axios.post(url, this.getters.getPlainState)
               .then(function (response) {
                 console.log(response.data);
-                state.img_data = response.data;
+                context.commit('setImgData',response.data);
               })
               .catch(function (error) {
                 console.log(error);
@@ -64,6 +67,10 @@ export default new Vuex.Store({
     getters:{
         getMainText : state => {
             return state.main_text;
+        },
+
+        getImgArray : state=>{
+            return state.img_data;
         },
 
         getSearchText : state =>{
