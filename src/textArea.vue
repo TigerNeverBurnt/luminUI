@@ -1,6 +1,6 @@
 <template>
     <v-flex xs12>
-        <v-toolbar color="indigo">
+        <v-toolbar color="#343233" style="color:#efdab9;">
             <v-toolbar-title>Editor</v-toolbar-title>
             <v-spacer></v-spacer>
         </v-toolbar>

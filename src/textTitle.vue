@@ -7,7 +7,7 @@
           v-model="itext" clearable>
     </el-input>-->
     <v-flex xs12>
-        <v-toolbar color="indigo">
+        <v-toolbar color="#343233" style="color:#efdab9;">
             <v-toolbar-title>Search Reverse Filter Pool</v-toolbar-title>
             <v-spacer></v-spacer>
         </v-toolbar>

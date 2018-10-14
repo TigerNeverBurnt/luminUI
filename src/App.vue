@@ -4,7 +4,9 @@
         <v-btn fab dark small top fixed left style="top: 10px;" v-on:click="changeView">
             <v-icon dark>list</v-icon>
         </v-btn>
-        <el-header class="welcome" style="background-color: #343233;color: #efdab9;">Lumin</el-header>
+        <el-header class="welcome" style="background-color: #343233;color: #efdab9;">
+            Lumin -> A searchable <span class="hero-tagline-highlight"> resource editor </span>for Media Worker
+        </el-header>
 
         <el-container style="height:700px; border: 1px solid #eee">
             <el-aside :width="w" style="background-color: rgb(238, 241, 246)">
